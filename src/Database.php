@@ -9,7 +9,7 @@ class Database
     private $table;
     public function __construct($table)
     {
-        include('config.php');
+        include('../config.php');
         $this->pdo = new \PDO(sprintf(
             'pgsql:host=%s;port=%s;user=%s;password=%s;dbname=%s',
             $db['host'],
