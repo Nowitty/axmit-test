@@ -2,7 +2,7 @@
 <div>
     <div class="article">
         <h3><?= htmlspecialchars($article['title']) ?></h3>
-        <p><?= htmlspecialchars(substr($article['body'], 0, 100).'..') ?></p>
+        <p><?= htmlspecialchars($article['body']) ?></p>
         <small><?= $article['created_on'] ?></small>
     </div>
     <div class="comment-container">
