@@ -1,3 +1,3 @@
 ## Using
 
-1. Fork or clone
+1. https://salty-springs-95365.herokuapp.com/

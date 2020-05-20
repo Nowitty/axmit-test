@@ -9,11 +9,7 @@ class Database
     private $table;
     public function __construct($table)
     {
-        $db['host'] = 'ec2-35-171-31-33.compute-1.amazonaws.com';
-        $db['user'] = 'zdbtebkvfyplfe';
-        $db['port'] = '5432';
-        $db['pass'] = '043de618653034288655120d843beae5d169edb4c41aae052d177e5ad4783cda';
-        $db['name'] = 'd91vcn4speqqg2';
+        include('config.php');
         $this->pdo = new \PDO(sprintf(
             'pgsql:host=%s;port=%s;user=%s;password=%s;dbname=%s',
             $db['host'],
