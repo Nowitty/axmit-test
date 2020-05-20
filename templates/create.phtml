@@ -1,0 +1,15 @@
+<?php include (__DIR__.'/layout.phtml'); ?>
+
+<form method="post" action="/articles/create">
+  <div class="container">
+    <h1>Новая статья</h1>
+    <hr>
+    <label for="title"><b>Заголовок</b></label>
+    <input type="text" name="title" required>
+
+    <label for="body"><b>Текст</b></label><br>
+    <textarea name="body"></textarea>
+    <input type="hidden" name="author_id" value="<?= $currentUser['id'] ?>">
+    <button type="submit" class="registerbtn">Создать</button>
+  </div>
+</form>

@@ -1,0 +1,12 @@
+<?php include (__DIR__.'/layout.phtml'); ?>
+
+<?php foreach ($articles as $article): ?>
+<div class="article">
+    <a href="/articles/<?=htmlspecialchars($article['id'])?>">
+        <h1><?= htmlspecialchars($article['title']) ?></h1>
+    </a>
+    <a href="/articles/<?=$article['id']?>">
+        <p><?= htmlspecialchars($article['body']) ?></p>
+    </a>   
+</div>
+<?php endforeach ?>

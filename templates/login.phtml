@@ -1,0 +1,18 @@
+<?php include (__DIR__.'/layout.phtml'); ?>
+
+<form method="post" action="/auth">
+  <div class="container">
+    <h1>Авторизация</h1>
+    <hr>
+    <?php if(!empty($errors)): ?>
+        <?= $errors[0] ?><br>
+    <?php endif ?>
+    <label for="name"><b>Имя</b></label>
+    <input type="text" placeholder="Name" name="name" required>
+
+    <label for="psw"><b>Пароль</b></label>
+    <input type="password" placeholder="Password" name="password" required>
+
+    <button type="submit" class="registerbtn">Login</button>
+  </div>
+</form>

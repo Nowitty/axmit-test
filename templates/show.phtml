@@ -1,0 +1,28 @@
+<?php include (__DIR__.'/layout.phtml'); ?>
+<div>
+    <div class="article">
+        <h3><?= htmlspecialchars($article['title']) ?></h3>
+        <p><?= htmlspecialchars($article['body']) ?></p>
+        <small><?= $article['created_on'] ?></small>
+    </div>
+    <div class="comment-container">
+        <h1>Комментарии:</h1>
+        <?php foreach ($comments as $comment): ?>
+                Автор:
+                <?=htmlspecialchars($comment['name'])?><br>
+                Комментарий:
+                <p><?=htmlspecialchars($comment['body'])?></p>
+        <?php endforeach ?>
+    </div>
+    <form method="post" action="/comment">
+    <div class="comment">
+        <p>Оставить комментарий</p>
+        <label for="name"><b>Имя</b></label><br>
+        <input type="text" name="name" required><br>
+        <label for="body"><b>Комментарий</b></label><br>
+        <textarea name="body"></textarea>
+        <input type="hidden" name="article_id" value="<?= $article['id'] ?>">
+        <button type="submit" class="registerbtn">Оставить комментарий</button>
+    </div>
+    </form>
+</div>

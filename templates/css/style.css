@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500&family=Muli:ital,wght@1,300&family=Nunito:wght@300&display=swap');
+
+body {
+    background: white;
+}
+.top {
+    margin:0px;
+    padding: 0px;
+    top:0px;
+    left:0px;
+    height: 50px;
+    width:100%;
+}
+.top a {
+    color: #18bc9c;
+    font-size: 2em;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+    position:relative;
+}
+.top a:hover {
+    color: #2765C0;
+    text-decoration: underline;
+}
+
+.article {
+    padding: 0px 20px;
+    text-align: center;
+    color: #2765C0;
+    width: 800px;
+    border-bottom: 2px solid;
+    border-color: #FF7821;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+}
+.article a {
+    color: #FF7821;
+    text-decoration: none;
+}
+.article a:hover {
+    color: #2765C0;
+    text-decoration: underline;
+    
+}
+.article p {
+    color: #2765C0;
+}
+.article p:hover {
+    color: #18bc9c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+    background-color: #18bc9c;
+    width:500px;
+    margin: auto;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: white;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+    background-color: #2765C0;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity: 3;
+}
+
+.container textarea {
+    width: 100%;
+    height: 200px;
+}
+/* Add a blue text color to links */
+a {
+    color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+.error {
+    color:red;
+    margin-left: auto;
+    margin-right: auto;
+}
+.comment {
+    padding:10px;
+    margin:auto;
+    margin-top: 20px;
+    width:800px;
+    background-color: #18bc9c;
+}
+.comment p {
+    font-size: large;
+}
+.comment input[type=text]{
+    width:30%;
+}
+.comment textarea {
+    width: 100%;
+    height: 100px;
+}
+.comment button {
+    width:30%;
+}
+.comment-container {
+    font-family: 'Nunito', sans-serif;
+    padding:5px;
+    width:800px;
+    margin:auto;
+    background-color: white;
+}
+.comment-container p {
+    border-bottom: 2px solid #2765C0;
+}

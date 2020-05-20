@@ -1,0 +1,15 @@
+<style>
+    <?php include (__DIR__.'/css/style.css'); ?>
+</style>
+
+<div class="top">
+    <a href="/">Статьи</a>
+    <?php if (empty($currentUser)):?>
+    <a href="/login">Вход</a>
+    <a href="/register">Регистрация</a>
+    <?php else: ?> 
+    <a><?= htmlspecialchars($currentUser['name']) ?></a>
+    <a href="/articles/create"> Новая статья </a>
+    <a href="/logout"> Выход </a>
+    <?php endif?>
+</div>
