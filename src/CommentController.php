@@ -9,14 +9,14 @@ class CommentController
 
    public function __construct(ContainerInterface $container) {
        $this->container = $container;
+       $this->db = $container->get('App\Database');
+       $this->db->table = 'comments';
    }
 
    public function create($request, $response) 
    {
-        $db = new Database('comments');
         $params = $request->getParsedBody();
-        var_dump($params);
-        $db->insert($params);
+        $this->db->insert($params);
         return $response->withHeader('Location', '/articles/'.$params['article_id']);
    }
 }

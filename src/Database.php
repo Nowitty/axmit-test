@@ -6,21 +6,18 @@ namespace App;
 class Database
 {
     private $pdo;
-    private $table;
-    public function __construct($table)
+    public $table;
+
+    public function __construct()
     {
-        include('../config.php');
-        $this->pdo = new \PDO(sprintf(
-            'pgsql:host=%s;port=%s;user=%s;password=%s;dbname=%s',
-            $db['host'],
-            $db['port'],
-            $db['user'],
-            $db['pass'],
-            $db['name']
-        ));
-        $this->pdo->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
-        $this->table = $table;
+        $this->pdo = Connection::make();
     }
+
+    public function __set($name, $value) 
+    {
+        $this->$name = $value;
+    }
+
     public function insert($params)
     {
         $pdo = $this->pdo;
