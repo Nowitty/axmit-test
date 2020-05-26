@@ -11,7 +11,6 @@ class UserController
    {
         $this->container = $container;
         $this->db = $container->get('App\Database');
-        $this->db->table = 'users';
    }
 
    public function create($request, $response) 
@@ -23,7 +22,7 @@ class UserController
    public function store($request, $response, $args) 
    {
         $params = $request->getParsedBody();
-        $this->db->insert($params);
+        $this->db->insert($params, 'users');
         return $response->withHeader('Location', '/login');
    }
 
@@ -38,7 +37,7 @@ class UserController
         $params = $request->getParsedBody();
         $name = $params['name'];
         $password = $params['password'];
-        $user = $this->db->selectBy('name', $name);
+        $user = $this->db->selectBy('name', $name, 'users');
         if (empty($user)) {
             $errors = ['Неверный логин'];
         } elseif ($user[0]['password'] !== $password) {

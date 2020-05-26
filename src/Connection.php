@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace App;
 
-class Connection
+final class Connection
 {
-    private static $pdo = null;
+    private static ? \PDO $pdo = null;
 
     public static function make()
     {
@@ -27,4 +27,13 @@ class Connection
         // return $pdo;
         //$this->pdo->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
     }
+
+    private function __construct()
+    {}
+
+    private function __clone()
+    {}
+
+    private function __wakeup()
+    {}
 }

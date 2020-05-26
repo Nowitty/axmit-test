@@ -7,16 +7,16 @@ class CommentController
 {
    protected $container;
 
-   public function __construct(ContainerInterface $container) {
+   public function __construct(ContainerInterface $container) 
+   {
        $this->container = $container;
        $this->db = $container->get('App\Database');
-       $this->db->table = 'comments';
    }
 
    public function create($request, $response) 
    {
         $params = $request->getParsedBody();
-        $this->db->insert($params);
+        $this->db->insert($params, 'comments');
         return $response->withHeader('Location', '/articles/'.$params['article_id']);
    }
 }

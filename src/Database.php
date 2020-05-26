@@ -6,36 +6,32 @@ namespace App;
 class Database
 {
     private $pdo;
-    public $table;
 
     public function __construct()
     {
         $this->pdo = Connection::make();
     }
 
-    public function __set($name, $value) 
-    {
-        $this->$name = $value;
-    }
-
-    public function insert($params)
+    public function insert($params, $table)
     {
         $pdo = $this->pdo;
         $columns = implode(', ', array_keys($params));
         $values = implode(', ', array_map(function ($item) use ($pdo) {
             return $pdo->quote($item);
         }, array_values($params)));
-        $sql = "INSERT INTO {$this->table} ($columns) VALUES ($values)";
+        $sql = "INSERT INTO {$table} ($columns) VALUES ($values)";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
     }
-    public function selectAll()
+
+    public function selectAll($table)
     {
-        return $this->pdo->query("SELECT * FROM {$this->table} ORDER BY id DESC")->fetchAll(\PDO::FETCH_ASSOC);
+        return $this->pdo->query("SELECT * FROM {$table} ORDER BY id DESC")->fetchAll(\PDO::FETCH_ASSOC);
     }
-    public function selectBy($column, $value)
+    
+    public function selectBy($column, $value, $table)
     {
-        return $this->pdo->query("SELECT * FROM {$this->table} WHERE {$column}='{$value}'")->fetchAll(\PDO::FETCH_ASSOC);
+        return $this->pdo->query("SELECT * FROM {$table} WHERE {$column}='{$value}'")->fetchAll(\PDO::FETCH_ASSOC);
     }
     
 }
